@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+issueTrackerURL="https://github.com/Mrbysco/CloudGlass/issues"
+license="MIT"
+
+[[mods]]
+modId="cloudglass"
+version="${file.jarVersion}"
+displayName="Cloud Glass"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/cloud-glass"
+authors="Mrbysco"
+credits="Soap in the All The Mods 10 discord"
+description='''
+Decorative semi-transparent glass blocks that can be walked through
+'''
+[[dependencies.cloudglass]]
+modId="minecraft"
+type="required"
+versionRange="[1.21,1.22)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.cloudglass]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.1,)"
+ordering="NONE"
+side="BOTH"
