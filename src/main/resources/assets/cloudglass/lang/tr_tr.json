@@ -1,0 +1,19 @@
+{
+  "block.cloudglass.black_cloud_glass": "Siyah Bulut Cam",
+  "block.cloudglass.blue_cloud_glass": "Mavi Bulut Cam",
+  "block.cloudglass.brown_cloud_glass": "Kahverengi Bulut Cam",
+  "block.cloudglass.cyan_cloud_glass": "Camgöbeği Bulut Cam",
+  "block.cloudglass.gray_cloud_glass": "Gri Bulut Cam",
+  "block.cloudglass.green_cloud_glass": "Yeşil Bulut Cam",
+  "block.cloudglass.light_blue_cloud_glass": "Açık Mavi Bulut Cam",
+  "block.cloudglass.light_gray_cloud_glass": "Açık Gri Bulut Cam",
+  "block.cloudglass.lime_cloud_glass": "Açık Yeşil Bulut Cam",
+  "block.cloudglass.magenta_cloud_glass": "Eflatun Bulut Cam",
+  "block.cloudglass.orange_cloud_glass": "Turuncu Bulut Cam",
+  "block.cloudglass.pink_cloud_glass": "Pembe Bulut Cam",
+  "block.cloudglass.purple_cloud_glass": "Mor Bulut Cam",
+  "block.cloudglass.red_cloud_glass": "Kırmızı Bulut Cam",
+  "block.cloudglass.white_cloud_glass": "Beyaz Bulut Cam",
+  "block.cloudglass.yellow_cloud_glass": "Sarı Bulut Cam",
+  "itemGroup.cloudglass.tab": "Bulut Cam"
+}
