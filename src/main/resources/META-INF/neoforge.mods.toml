@@ -16,12 +16,12 @@ Decorative semi-transparent glass blocks that can be walked through
 [[dependencies.cloudglass]]
 modId="minecraft"
 type="required"
-versionRange="[1.21.4,1.22)"
+versionRange="[1.21.5,1.22)"
 ordering="NONE"
 side="BOTH"
 [[dependencies.cloudglass]]
 modId="neoforge"
 type="required"
-versionRange="[21.4.0-beta,)"
+versionRange="[21.5.0-beta,)"
 ordering="NONE"
 side="BOTH"

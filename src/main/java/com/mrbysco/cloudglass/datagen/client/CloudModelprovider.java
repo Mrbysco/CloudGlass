@@ -6,8 +6,6 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
-import net.minecraft.client.data.models.blockstates.Variant;
-import net.minecraft.client.data.models.blockstates.VariantProperties;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
@@ -29,8 +27,8 @@ public class CloudModelprovider extends ModelProvider {
 			ResourceLocation model = TRANSLUCENT_CUBE.create(registryObject.get(), TextureMapping.cube(registryObject.getId().withPrefix("block/")), blockModels.modelOutput);
 			blockModels.blockStateOutput
 					.accept(
-							MultiVariantGenerator.multiVariant(registryObject.get(),
-									Variant.variant().with(VariantProperties.MODEL, model)
+							MultiVariantGenerator.dispatch(registryObject.get(),
+									BlockModelGenerators.plainVariant(model)
 							)
 					);
 			blockModels.registerSimpleItemModel(registryObject.get(), model);
