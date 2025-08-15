@@ -2,12 +2,12 @@ package com.mrbysco.cloudglass.datagen.server;
 
 import com.mrbysco.cloudglass.block.CloudGlassBlock;
 import com.mrbysco.cloudglass.registry.CloudRegistry;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
@@ -18,12 +18,12 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import java.util.concurrent.CompletableFuture;
 
 public class CloudRecipeProvider extends RecipeProvider {
-	public CloudRecipeProvider(PackOutput output, CompletableFuture<Provider> lookupProvider) {
-		super(output, lookupProvider);
+	public CloudRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
+		super(provider, recipeOutput);
 	}
 
 	@Override
-	protected void buildRecipes(RecipeOutput output) {
+	protected void buildRecipes() {
 		cloudRecipe(CloudRegistry.WHITE_CLOUD_GLASS, Blocks.WHITE_WOOL, output);
 		cloudRecipe(CloudRegistry.ORANGE_CLOUD_GLASS, Blocks.ORANGE_WOOL, output);
 		cloudRecipe(CloudRegistry.MAGENTA_CLOUD_GLASS, Blocks.MAGENTA_WOOL, output);
@@ -59,7 +59,7 @@ public class CloudRecipeProvider extends RecipeProvider {
 	}
 
 	private void cloudRecipe(DeferredBlock<CloudGlassBlock> block, ItemLike wool, RecipeOutput output) {
-		new ShapedRecipeBuilder(RecipeCategory.BUILDING_BLOCKS, block.asItem(), 4)
+		shaped(RecipeCategory.BUILDING_BLOCKS, block.asItem(), 4)
 				.pattern(" W ")
 				.pattern("WGW")
 				.pattern(" W ")
@@ -71,7 +71,7 @@ public class CloudRecipeProvider extends RecipeProvider {
 	}
 
 	private void dyeRecipe(DeferredBlock<CloudGlassBlock> block, TagKey<Item> dye, RecipeOutput output) {
-		new ShapedRecipeBuilder(RecipeCategory.BUILDING_BLOCKS, block.asItem(), 8)
+		shaped(RecipeCategory.BUILDING_BLOCKS, block.asItem(), 8)
 				.pattern("CCC")
 				.pattern("CDC")
 				.pattern("CCC")
@@ -79,6 +79,22 @@ public class CloudRecipeProvider extends RecipeProvider {
 				.define('D', dye)
 				.unlockedBy("has_cloud", has(CloudRegistry.WHITE_CLOUD_GLASS))
 				.unlockedBy("has_dye", has(dye))
-				.save(output, block.getId().withSuffix("_from_dye"));
+				.save(output, block.getId().withSuffix("_from_dye").toString());
+	}
+
+	public static class Runner extends RecipeProvider.Runner {
+		public Runner(PackOutput output, CompletableFuture<Provider> completableFuture) {
+			super(output, completableFuture);
+		}
+
+		@Override
+		protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
+			return new CloudRecipeProvider(provider, recipeOutput);
+		}
+
+		@Override
+		public String getName() {
+			return "Cloud Glass Recipes";
+		}
 	}
 }

@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "G": {
-      "tag": "c:glass_blocks/colorless"
-    },
-    "W": {
-      "item": "minecraft:brown_wool"
-    }
+    "G": "#c:glass_blocks/colorless",
+    "W": "minecraft:brown_wool"
   },
   "pattern": [
     " W ",

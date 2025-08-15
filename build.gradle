@@ -3,8 +3,8 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.neoforged.gradle.userdev' version '7.0.171'
-    id 'net.darkhax.curseforgegradle' version '1.1.25'
+    id 'net.neoforged.gradle.userdev' version '7.0.192'
+    id 'net.darkhax.curseforgegradle' version '1.1.26'
     id 'com.modrinth.minotaur' version "2.+"
 }
 
@@ -49,12 +49,12 @@ runs {
         programArgument '--nogui'
     }
 
-    data {
+    clientData {
         // example of overriding the workingDirectory set in configureEach above, uncomment if you want to use it
         // workingDirectory project.file('run-data')
 
         // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-        programArguments.addAll '--mod', "${mod_id}", '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        arguments.addAll '--mod', "${mod_id}", '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
     }
 }
 
@@ -125,7 +125,7 @@ if (System.getenv().CURSEFORGE_KEY) {
         apiToken = System.getenv().CURSEFORGE_KEY
 
         def mainFile = upload(project.curseforge_id, jar)
-        mainFile.releaseType = 'release'
+        mainFile.releaseType = 'beta'
         mainFile.addModLoader("NeoForge")
         mainFile.addGameVersion("${mc_version}")
         mainFile.addJavaVersion("Java 21")
@@ -143,7 +143,7 @@ if (System.getenv().MODRINTH_KEY) {
     modrinth {
         token = System.getenv().MODRINTH_KEY
         projectId = project.modrinth_id
-        versionType = "release"
+        versionType = "beta"
         versionName = "${mod_name} ${mc_version}"
         versionNumber = project.version
         uploadFile = jar
