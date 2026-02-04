@@ -47,7 +47,7 @@ public class CloudRegistry {
 						.strength(0.3F)
 						.sound(SoundType.GLASS)
 						.noOcclusion()
-						.noCollission()
+						.noCollision()
 						.isValidSpawn((state, getter, pos, type) -> false)
 						.isRedstoneConductor((state, getter, pos) -> false)
 						.isSuffocating((state, getter, pos) -> false)

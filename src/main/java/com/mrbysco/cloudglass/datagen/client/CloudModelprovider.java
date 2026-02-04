@@ -10,7 +10,7 @@ import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
@@ -24,7 +24,7 @@ public class CloudModelprovider extends ModelProvider {
 	@Override
 	protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 		for (DeferredHolder<Block, ? extends Block> registryObject : CloudRegistry.BLOCKS.getEntries()) {
-			ResourceLocation model = TRANSLUCENT_CUBE.create(registryObject.get(), TextureMapping.cube(registryObject.getId().withPrefix("block/")), blockModels.modelOutput);
+			Identifier model = TRANSLUCENT_CUBE.create(registryObject.get(), TextureMapping.cube(registryObject.getId().withPrefix("block/")), blockModels.modelOutput);
 			blockModels.blockStateOutput
 					.accept(
 							MultiVariantGenerator.dispatch(registryObject.get(),
