@@ -1,1 +1,1 @@
-* Initial update to 26.1.2
+* Add pt_br translation (Courtesy of [PrincessStellar](https://github.com/Mrbysco/CloudGlass/pull/3))
