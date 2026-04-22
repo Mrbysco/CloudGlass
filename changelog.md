@@ -1,1 +1,1 @@
-* Fix cloud glass being broken by flowing water
+* Add pt_br translation (Courtesy of [PrincessStellar](https://github.com/Mrbysco/CloudGlass/pull/3))
