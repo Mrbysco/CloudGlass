@@ -24,22 +24,22 @@ public class CloudRecipeProvider extends RecipeProvider {
 
 	@Override
 	protected void buildRecipes() {
-		cloudRecipe(CloudRegistry.WHITE_CLOUD_GLASS, Blocks.WHITE_WOOL, output);
-		cloudRecipe(CloudRegistry.ORANGE_CLOUD_GLASS, Blocks.ORANGE_WOOL, output);
-		cloudRecipe(CloudRegistry.MAGENTA_CLOUD_GLASS, Blocks.MAGENTA_WOOL, output);
-		cloudRecipe(CloudRegistry.LIGHT_BLUE_CLOUD_GLASS, Blocks.LIGHT_BLUE_WOOL, output);
-		cloudRecipe(CloudRegistry.YELLOW_CLOUD_GLASS, Blocks.YELLOW_WOOL, output);
-		cloudRecipe(CloudRegistry.LIME_CLOUD_GLASS, Blocks.LIME_WOOL, output);
-		cloudRecipe(CloudRegistry.PINK_CLOUD_GLASS, Blocks.PINK_WOOL, output);
-		cloudRecipe(CloudRegistry.GRAY_CLOUD_GLASS, Blocks.GRAY_WOOL, output);
-		cloudRecipe(CloudRegistry.LIGHT_GRAY_CLOUD_GLASS, Blocks.LIGHT_GRAY_WOOL, output);
-		cloudRecipe(CloudRegistry.CYAN_CLOUD_GLASS, Blocks.CYAN_WOOL, output);
-		cloudRecipe(CloudRegistry.PURPLE_CLOUD_GLASS, Blocks.PURPLE_WOOL, output);
-		cloudRecipe(CloudRegistry.BLUE_CLOUD_GLASS, Blocks.BLUE_WOOL, output);
-		cloudRecipe(CloudRegistry.BROWN_CLOUD_GLASS, Blocks.BROWN_WOOL, output);
-		cloudRecipe(CloudRegistry.GREEN_CLOUD_GLASS, Blocks.GREEN_WOOL, output);
-		cloudRecipe(CloudRegistry.RED_CLOUD_GLASS, Blocks.RED_WOOL, output);
-		cloudRecipe(CloudRegistry.BLACK_CLOUD_GLASS, Blocks.BLACK_WOOL, output);
+		cloudRecipe(CloudRegistry.WHITE_CLOUD_GLASS, Blocks.WOOL.white(), output);
+		cloudRecipe(CloudRegistry.ORANGE_CLOUD_GLASS, Blocks.WOOL.orange(), output);
+		cloudRecipe(CloudRegistry.MAGENTA_CLOUD_GLASS, Blocks.WOOL.magenta(), output);
+		cloudRecipe(CloudRegistry.LIGHT_BLUE_CLOUD_GLASS, Blocks.WOOL.lightBlue(), output);
+		cloudRecipe(CloudRegistry.YELLOW_CLOUD_GLASS, Blocks.WOOL.yellow(), output);
+		cloudRecipe(CloudRegistry.LIME_CLOUD_GLASS, Blocks.WOOL.lime(), output);
+		cloudRecipe(CloudRegistry.PINK_CLOUD_GLASS, Blocks.WOOL.pink(), output);
+		cloudRecipe(CloudRegistry.GRAY_CLOUD_GLASS, Blocks.WOOL.gray(), output);
+		cloudRecipe(CloudRegistry.LIGHT_GRAY_CLOUD_GLASS, Blocks.WOOL.lightGray(), output);
+		cloudRecipe(CloudRegistry.CYAN_CLOUD_GLASS, Blocks.WOOL.cyan(), output);
+		cloudRecipe(CloudRegistry.PURPLE_CLOUD_GLASS, Blocks.WOOL.purple(), output);
+		cloudRecipe(CloudRegistry.BLUE_CLOUD_GLASS, Blocks.WOOL.blue(), output);
+		cloudRecipe(CloudRegistry.BROWN_CLOUD_GLASS, Blocks.WOOL.brown(), output);
+		cloudRecipe(CloudRegistry.GREEN_CLOUD_GLASS, Blocks.WOOL.green(), output);
+		cloudRecipe(CloudRegistry.RED_CLOUD_GLASS, Blocks.WOOL.red(), output);
+		cloudRecipe(CloudRegistry.BLACK_CLOUD_GLASS, Blocks.WOOL.black(), output);
 
 		dyeRecipe(CloudRegistry.ORANGE_CLOUD_GLASS, Tags.Items.DYES_ORANGE, output);
 		dyeRecipe(CloudRegistry.MAGENTA_CLOUD_GLASS, Tags.Items.DYES_MAGENTA, output);
