@@ -47,4 +47,8 @@ public class CloudGlassBlock extends TransparentBlock implements BeaconBeamBlock
 	public boolean placeLiquid(LevelAccessor level, BlockPos pos, BlockState state, FluidState fluidState) {
 		return false;
 	}
+
+	public int getTintRgb() {
+		return color.getTextureDiffuseColor() & 0xFFFFFF;
+	}
 }
