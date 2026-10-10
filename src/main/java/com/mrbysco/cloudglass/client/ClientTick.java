@@ -32,7 +32,7 @@ public class ClientTick {
 
 					BlockPos pos = BlockPos.containing(mc.player.getEyePosition());
 					if (mc.level.getBlockState(pos).getBlock() instanceof CloudGlassBlock tint) {
-						int argb = (ALPHA << 24) | (tint.getTintRgb() & 0xFFFFFF);
+						int argb = (ALPHA << 24) | tint.getTintRgb();
 						graphics.fill(0, 0, graphics.guiWidth(), graphics.guiHeight(), argb);
 					}
 				});
