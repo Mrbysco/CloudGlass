@@ -1,1 +1,1 @@
-* Add pt_br translation (Courtesy of [PrincessStellar](https://github.com/Mrbysco/CloudGlass/pull/3))
+* Add a screen tint when head is inside Cloud Glass (Courtesy of [GaeaKat](https://github.com/Mrbysco/CloudGlass/pull/4))
