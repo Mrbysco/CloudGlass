@@ -2,14 +2,17 @@ package com.mrbysco.cloudglass.datagen.server;
 
 import com.mrbysco.cloudglass.block.CloudGlassBlock;
 import com.mrbysco.cloudglass.registry.CloudRegistry;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
@@ -18,8 +21,8 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import java.util.concurrent.CompletableFuture;
 
 public class CloudRecipeProvider extends RecipeProvider {
-	public CloudRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
-		super(provider, recipeOutput);
+	public CloudRecipeProvider(BootstrapContext<Recipe<?>> recipeOutput, BootstrapContext<Advancement> advancementOutput) {
+		super(recipeOutput, advancementOutput);
 	}
 
 	@Override
@@ -64,9 +67,9 @@ public class CloudRecipeProvider extends RecipeProvider {
 				.pattern("WGW")
 				.pattern(" W ")
 				.define('W', wool)
-				.define('G', Tags.Items.GLASS_BLOCKS_COLORLESS)
+				.define('G', Tags.BlockItems.GLASS_BLOCKS_COLORLESS.item())
 				.unlockedBy("has_wool", has(wool))
-				.unlockedBy("has_glass", has(Tags.Items.GLASS_BLOCKS_COLORLESS))
+				.unlockedBy("has_glass", has(Tags.BlockItems.GLASS_BLOCKS_COLORLESS.item()))
 				.save(output);
 	}
 
@@ -80,21 +83,5 @@ public class CloudRecipeProvider extends RecipeProvider {
 				.unlockedBy("has_cloud", has(CloudRegistry.WHITE_CLOUD_GLASS))
 				.unlockedBy("has_dye", has(dye))
 				.save(output, block.getId().withSuffix("_from_dye").toString());
-	}
-
-	public static class Runner extends RecipeProvider.Runner {
-		public Runner(PackOutput output, CompletableFuture<Provider> completableFuture) {
-			super(output, completableFuture);
-		}
-
-		@Override
-		protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
-			return new CloudRecipeProvider(provider, recipeOutput);
-		}
-
-		@Override
-		public String getName() {
-			return "Cloud Glass Recipes";
-		}
 	}
 }

@@ -51,7 +51,7 @@ public class CloudRegistry {
 						.isValidSpawn((state, getter, pos, type) -> false)
 						.isRedstoneConductor((state, getter, pos) -> false)
 						.isSuffocating((state, getter, pos) -> false)
-						.isViewBlocking((state, getter, pos) -> false)
+						.isViewBlocking((state, getter, pos, aabb) -> false)
 		));
 		ITEMS.registerSimpleBlockItem(block);
 		return block;

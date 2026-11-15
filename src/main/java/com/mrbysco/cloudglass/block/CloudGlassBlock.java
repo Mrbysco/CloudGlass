@@ -1,7 +1,5 @@
 package com.mrbysco.cloudglass.block;
 
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.DyeColor;
@@ -17,16 +15,7 @@ import net.minecraft.world.level.material.FluidState;
 import org.jetbrains.annotations.Nullable;
 
 public class CloudGlassBlock extends TransparentBlock implements BeaconBeamBlock, LiquidBlockContainer {
-	public static final MapCodec<CloudGlassBlock> CODEC = RecordCodecBuilder.mapCodec(
-			instance -> instance.group(DyeColor.CODEC.fieldOf("color").forGetter(CloudGlassBlock::getColor), propertiesCodec())
-					.apply(instance, CloudGlassBlock::new)
-	);
 	private final DyeColor color;
-
-	@Override
-	public MapCodec<CloudGlassBlock> codec() {
-		return CODEC;
-	}
 
 	public CloudGlassBlock(DyeColor dyeColor, BlockBehaviour.Properties properties) {
 		super(properties);

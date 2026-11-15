@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "cloudglass:lime_cloud_glass_from_dye"
+        "recipes": "cloudglass:lime_cloud_glass_from_dye"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

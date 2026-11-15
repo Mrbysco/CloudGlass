@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "cloudglass:cyan_cloud_glass"
+        "recipes": "cloudglass:cyan_cloud_glass"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
