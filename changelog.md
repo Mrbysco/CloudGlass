@@ -1,1 +1,1 @@
-* Update compatible range
+* Add a screen tint when head is inside Cloud Glass (Courtesy of [GaeaKat](https://github.com/Mrbysco/CloudGlass/pull/4))
